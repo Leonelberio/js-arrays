@@ -1,4 +1,4 @@
-let items = [
+const items = [
   { name: "rice", price: 120 },
   { name: "maize", price: 200 },
   { name: "sorgho", price: 300 },
@@ -8,6 +8,9 @@ let items = [
   { name: "Desktop", price: 500 },
   { name: "Speaker", price: 600 }
 ];
+
+const numbers = [1, 2, 3, 4, 5, 6, 7];
+const value = 5;
 
 //Filter method => Filter array based on condition
 let filteredItems = items.filter((item) => {
@@ -63,12 +66,26 @@ const isBellowThound = items.every((item) => {
 console.log(isBellowThound);
 
 console.log("***********************");
-console.log("Reduce method");
 
 /**Reduce method => Add the precedent
- value to the current starting from a point*/
+ value to the current starting from
+ a default value*/
+console.log("Reduce method");
+
 const total = items.reduce((currentTotal, item) => {
   return item.price + currentTotal;
 }, 0);
 
 console.log(total);
+
+console.log("***********************");
+
+/**Include method => Return true 
+ if an array has a value (Similar to find)*/
+
+console.log("Include method");
+
+const includeMethod = numbers.includes(value);
+if (includeMethod) {
+  console.log(`The array has number ${value}`);
+}
